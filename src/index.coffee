@@ -11,7 +11,7 @@ module.exports = class StaticHtmlCompiler
 
   compile: (data, path, callback) ->
     try
-      result = "module.exports = #{JSON.stringify(data)};"
+      result = "module.exports = function(){return #{JSON.stringify(data)};};"
     catch err
       error = err
     finally
